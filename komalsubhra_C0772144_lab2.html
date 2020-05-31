@@ -13,8 +13,13 @@
 		/*added function for table*/
 	function generateTable(rows, columns){
         var table = document.createElement('table');
-	 for(var a = 0; a < rows; a++){
+	 for(var x = 0; x < rows; x++){
          var tr = document.createElement('tr');
+       for(var y = 0; y < columns; y++){
+      var td = document.createElement('td');
+      td.innerHTML = 'row' + '['+ x +']' + 'col' +'['+ y + ']';
+      tr.appendChild(td);
+    }
 
 		
 	     
