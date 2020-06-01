@@ -27,7 +27,31 @@
    }
 document.body.appendChild(table);
 }
+	    /*function to add row*/
+  function addRow() {
+    var tbl = document.getElementById("myTable"), 
+        row = tbl.insertRow(tbl.rows.length),i;
+    
+    for (i = 0; i < tbl.rows[0].cells.length; i++) {
+        addText(row.insertCell(i), "row");
+    }
+}
+	/*function to add column*/
+     function addColumn() {
+    var tbl = document.getElementById("myTable"), 
+        i;
+    
+    for (i = 0; i < tbl.rows.length; i++) {
+        addText(tbl.rows[i].insertCell(tbl.rows[i].cells.length), "col");
+    }
+}
 
+	/*function to addtext*/
+      function addText(cell, text) {
+        txt = document.createTextNode(text); 
+        cell.appendChild(txt);                                       
+        }
+	
     /*clear button*/
     function clear() {
         document.getElementById('t1').value = ''
@@ -40,30 +64,6 @@ document.body.appendChild(table);
             generateTable(rows, columns);
             clear();
         })
-
-      /*function to add row*/
-  function addRow() {
-    var tbl = document.getElementById("myTable"), 
-        row = tbl.insertRow(tbl.rows.length),i;
-    
-    for (i = 0; i < tbl.rows[0].cells.length; i++) {
-        addText(row.insertCell(i), "row");
-    }
-}
-	/*function to addtext*/
-      function addText(cell, text) {
-        txt = document.createTextNode(text); 
-        cell.appendChild(txt);                                       
-        }
-	/*function to add column*/
-     function addColumn() {
-    var tbl = document.getElementById("myTable"), 
-        i;
-    
-    for (i = 0; i < tbl.rows.length; i++) {
-        addText(tbl.rows[i].insertCell(tbl.rows[i].cells.length), "col");
-    }
-}
-           </script>
+	</script>
 	</body>
 </html>
